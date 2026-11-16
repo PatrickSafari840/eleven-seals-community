@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Eleven Seals · Community</title>
+<meta name="description" content="Kingdoms, monsters, news and hero cards from The Eleven Seals, a text adventure across the eleven kingdoms.">
+<meta property="og:title" content="The Eleven Seals · Community">
+<meta property="og:description" content="Kingdoms, monsters, news and hero cards from The Eleven Seals.">
+<meta property="og:image" content="img/title/art.jpg">
+<meta name="theme-color" content="#1a1410">
+<link rel="icon" type="image/png" sizes="32x32" href="img/icons/icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="img/icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/icons/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Kalam:wght@400;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap">
+<link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#/"><img src="img/icons/icon-192.png" alt=""><span>The Eleven Seals</span></a>
+  <nav id="nav">
+    <a href="#/" data-t="News">News</a>
+    <a href="#/kingdoms" data-t="Kingdoms">Kingdoms</a>
+    <a href="#/monsters" data-t="Monsters">Monsters</a>
+    <a href="#/hero" data-t="Hero cards">Hero cards</a>
+    <a href="#/report" data-t="Report a bug">Report a bug</a>
+    <a href="#/links" data-t="Community">Community</a>
+  </nav>
+  <select id="langPick" aria-label="Language"></select>
+  <a class="play" id="playTop" href="#" data-t="Play">Play</a>
+</header>
+<main id="app"></main>
+<footer class="foot"><span id="footVer"></span> · <a href="#/links" data-t="About">About</a></footer>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="config.js?v=1"></script>
+<script src="game-data/lang/files.js"></script>
+<script src="i18n.js?v=2"></script>
+<script src="lang-page.js?v=2"></script>
+<script src="game-data/base.js"></script>
+<script src="game-data/bestiary.js"></script>
+<script src="game-data/tales.js"></script>
+<script src="app.js?v=2"></script>
+</body>
+</html>

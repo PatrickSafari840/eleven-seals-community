@@ -28,7 +28,14 @@ The page has the game's six languages: English, French, Spanish, Portuguese, Jap
 
       powershell -ExecutionPolicy Bypass -File sync.ps1
 
-## Going online
+## Online
+The page is live on GitHub Pages: **https://patricksafari840.github.io/eleven-seals-community/**. The repository is github.com/PatrickSafari840/eleven-seals-community, and the game's Community buttons open this address.
+
+After you change the game or the page, publish again with one command. It runs `sync.ps1`, then pushes:
+
+    powershell -ExecutionPolicy Bypass -File publish.ps1
+
+## Going online (first time, for reference)
 1. Put the game and this folder online.
 2. In the game, set `COMMUNITY_URL` in `data/tales.js` to this page's full address.
 3. Here, set `gameUrl` in `config.js` to the game's full address.

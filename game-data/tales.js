@@ -16,6 +16,7 @@ const BAL = {
   eventChance: .10,       // chance of a random event on a quiet step
   swimStamina: 18,        // stamina lost per water hex
   levelCap: 27,                  // the highest level a hero can reach (src/game.js gainXP)
+  hpAtCap: 875,                  // a hero's maximum health at the top level, and the most it can ever be (src/game.js maxHp)
   monsterCap: 35,                // the highest level any enemy can have (src/combat.js makeEnemy), above levelCap
   areaLevel: d => Math.min(35, 1 + Math.floor(d / 4)),   // monster level by distance (in hexes) from where you start (was up to 45)
 };
@@ -293,7 +294,7 @@ const WHATS_NEW = [
 ];
 // The community page (the 11_seals_community folder next to the game). When both are online,
 // put its full address here, e.g. 'https://your-site.example/community/index.html'. Empty hides its buttons.
-const COMMUNITY_URL = '../11_seals_community/index.html';
+const COMMUNITY_URL = 'https://patricksafari840.github.io/eleven-seals-community/index.html';   // on GitHub Pages (local copy: '../11_seals_community/index.html')
 const COMMUNITY_LINKS = [
   // { name: 'Discord', note: 'Chat with other hunters', url: 'https://discord.gg/...' },
   // { name: 'YouTube', note: 'Trailers and devlogs', url: 'https://youtube.com/@...' },

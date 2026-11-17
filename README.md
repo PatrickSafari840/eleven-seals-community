@@ -1,6 +1,6 @@
 # The Eleven Seals · Community
 
-The community web page of the game. It is its own small web app: no server, no database, no accounts. Put this folder online anywhere that serves static files (GitHub Pages, Netlify, itch.io, your own host).
+The community web page of the game. It is its own small web app with no server of its own. Accounts, rankings, badges and the admin page use the game's online database (Supabase, see the game's README "Online"); without it those pages say they are not switched on. Put this folder online anywhere that serves static files (GitHub Pages, Netlify, itch.io, your own host).
 
 ## Pages
 - **News** (`#/`): What's new in the current version, a link to play, a lore stone.
@@ -9,6 +9,10 @@ The community web page of the game. It is its own small web app: no server, no d
 - **Hero cards** (`#/hero/<code>`): a card of a player's hero. In the game: title screen › Community › **Share my hero**. The card can be saved as a PNG or shared as a link. The code holds only what the card shows (name, kingdom, portrait, level, attributes, seals, deeds), never the save.
 - **Report a bug** (`#/report`): a form that builds a clear report. Players copy it, or send it by email or as a GitHub issue if you set that up in `config.js`.
 - **Community** (`#/links`): your links and the About text.
+- **Ranks** (`#/ranks`): the Open Dungeon's weekly and monthly bosses, time left, rankings and the badge winners.
+- **Account** (`#/account`): sign in or create an account (the same one as in the game), your hero names and your badges.
+- **Badge** (`#/badge/<number>`): one badge, with a check that the game really signed it.
+- **Admin** (`#/admin`, admins only): income, drop a new boss, end or delete bosses, give and take back badges, find and ban players.
 
 ## Languages
 The page has the game's six languages: English, French, Spanish, Portuguese, Japanese and Chinese.

@@ -3,6 +3,7 @@
    A one-page site with no server. It reads the game's own data
    (game-data/, copied by sync.ps1) and shows:
      #/            news (What's new), share and play
+     #/download    the Android APKs (one per language), before Google Play
      #/kingdoms    the eleven kingdoms (#/kingdoms/<id> for one)
      #/monsters    the Book of Monsters, with tales and secrets
      #/hero/<code> a hero card shared from the game (Community > Share my hero)
@@ -90,7 +91,7 @@ function decodeHero(code) {
       role: Array.isArray(o.r) && (o.r[0] === 'mercenary' || o.r[0] === 'outlaw') ? { path: o.r[0], rank: s(o.r[1], 30), count: n(o.r[2], 9999) } : null,
       beast: CREATURES[o.b] ? o.b : null,
       top: Array.isArray(o.t) ? o.t.filter(x => Array.isArray(x) && CREATURES[x[0]]).slice(0, 3).map(x => [x[0], n(x[1], 99999)]) : [],
-      pages: n(o.bk, 999), ver: s(o.gv, 10), won: !!o.w2,
+      pages: n(o.bk, 999), ver: s(o.gv, 10), won: !!o.w2, badges: o.bd == null ? null : n(o.bd, 99),
     };
   } catch (e) { return null; }
 }
@@ -102,7 +103,7 @@ function heroLines(H) {
     from: t('Hunter of {k}', { k: K.name }) + (H.hard ? ' · ' + tr('Hard') : ''),
     role: H.role ? (H.role.path === 'outlaw' ? trPattern('{rank} of the Inkless', { rank: tr(H.role.rank) }) : t('{rank} (mercenary)', { rank: tr(H.role.rank) })) : '',
     seals: t('Seals broken: {n} / 11', { n: H.seals.length }),
-    stats: [[t('Days on the road'), num(H.day)], [t('Monsters slain'), num(H.kills)], [t('Giants felled'), num(H.giants)], [t('Monster pages'), num(H.pages)]],
+    stats: [[t('Days on the road'), num(H.day)], [t('Monsters slain'), num(H.kills)], [t('Giants felled'), num(H.giants)], [t('Monster pages'), num(H.pages)]].concat(H.badges == null ? [] : [[t('Badges'), num(H.badges)]]),
     extra: [H.weapon && t('Wields {w}', { w: gearText(H.weapon) }), H.beast && t('Companion: {b}', { b: creatureName(H.beast) })].filter(Boolean).join(' · '),
     top: H.top.length ? t('Most hunted: {list}', { list: H.top.map(([id, n]) => creatureName(id) + ' ×' + n).join(CJK ? '、' : ', ') }) : '',
     foot: H.won ? t('Defeated the Unwriter') : (H.ver ? 'v' + H.ver : ''),
@@ -110,7 +111,8 @@ function heroLines(H) {
 }
 
 /* ---------- pages ---------- */
-const PAGES = { '': pageHome, kingdoms: pageKingdoms, monsters: pageMonsters, hero: pageHero, report: pageReport, links: pageLinks };
+// online.js adds #/account, #/ranks, #/badge and #/admin (window.EXTRA_PAGES)
+const PAGES = Object.assign({ '': pageHome, download: pageDownload, kingdoms: pageKingdoms, monsters: pageMonsters, hero: pageHero, report: pageReport, links: pageLinks }, window.EXTRA_PAGES || {});
 function route() {
   const parts = location.hash.replace(/^#\/?/, '').split('/');
   const page = PAGES[parts[0]] ? parts[0] : '';
@@ -372,6 +374,39 @@ function pageReport() {
       !C.issuesUrl && !C.reportEmail && h('p', { class: 'note', style: 'margin:0' }, t('Copy the report and paste it in our community channel.') + (communityLinks().length ? ' ' + t('Links are on the Community page.') : ''))));
 }
 
+/* ---------- download: the Android APKs, one per language pair ---------- */
+function pageDownload() {
+  const A = (COMMUNITY && COMMUNITY.android) || null;
+  const builds = (A && A.builds) || [];
+  const apkUrl = b => A.releaseBase + A.tag + '/eleven-seals-' + A.version + '-en-' + b.lang + '.apk';
+  // the visitor's own language first (English visitors: French first, as listed)
+  const sorted = builds.slice().sort((a, b) => (b.lang === LANG) - (a.lang === LANG));
+  const isAndroid = /android/i.test(navigator.userAgent);
+  return h('div', null,
+    h('section', { class: 'hero', style: bg('img/title/art.jpg') },
+      h('div', { class: 'in' },
+        h('img', { class: 'logo', src: 'img/title/logo.png', alt: 'The Eleven Seals' }),
+        h('p', null, A && A.playStoreUrl ? t('The Eleven Seals is on Google Play.') : t('Play The Eleven Seals on your Android phone now, before it reaches Google Play.')),
+        A && A.playStoreUrl && h('div', { class: 'btns' }, h('a', { class: 'btn main', href: A.playStoreUrl, target: '_blank', rel: 'noopener' }, t('Get it on Google Play'))))),
+    !builds.length ? h('p', { class: 'lead' }, t('The download opens soon.')) : h('section', { class: 'sec' },
+      h('h2', null, t('Download for Android')),
+      h('p', { class: 'lead' }, t('Each download has English and one other language, with the voice narration for both. Pick the language you want to play in.')),
+      !isAndroid && h('p', { class: 'note' }, t('On a computer? Open this page on your Android phone, or download the file and send it to your phone.')),
+      h('div', { class: 'links dl' }, sorted.map(b => h('a', { class: 'card' + (b.lang === LANG ? ' mine' : ''), href: apkUrl(b), download: '' },
+        h('b', null, b.name),
+        h('small', null, ['APK', t('Version {v}', { v: A.version }), b.mb ? b.mb + ' MB' : ''].filter(Boolean).join(' · '))))),
+      h('div', { class: 'card pad how' },
+        h('h3', null, t('How to install')),
+        h('ol', null,
+          h('li', null, t('Tap your language above. The file downloads to your phone.')),
+          h('li', null, t('Open the file from your notifications or your Downloads.')),
+          h('li', null, t('If Android asks, allow your browser to install unknown apps, then go back.')),
+          h('li', null, t('Tap Install, then Open. Your saves stay on your phone.'))),
+        h('p', { class: 'note', style: 'margin:0' }, t('This is an early version. To update it, download the new file and install it over the old one: your saves are kept.'))),
+      h('p', { class: 'note' }, h('a', { href: A.releasePage, target: '_blank', rel: 'noopener' }, t('All downloads and older versions')), ' · ',
+        h('a', { href: '#/report' }, t('Report a bug')))));
+}
+
 /* ---------- links and about ---------- */
 function communityLinks() {
   const own = (COMMUNITY && COMMUNITY.links) || [];
@@ -383,7 +418,7 @@ function pageLinks() {
     h('h2', null, t('Community')),
     h('p', { class: 'lead' }, links.length ? t('Meet other hunters, follow the news and tell us your stories.') : t('Our community channels open soon. Until then, play, share your hero card and send us your bug reports.')),
     h('div', { class: 'links' },
-      h('a', { class: 'card', href: PLAY }, h('b', null, t('Play the game')), h('small', null, t('In your browser, on phone or computer'))),
+      h('a', { class: 'card', href: '#/download' }, h('b', null, t('Download for Android')), h('small', null, t('One download per language, before Google Play'))),
       links.map(l => h('a', { class: 'card', href: l.url, target: '_blank', rel: 'noopener' }, h('b', null, tr(l.name)), h('small', null, tr(l.note || l.url))))),
     h('section', { class: 'sec about' },
       h('h2', null, t('About the game')),

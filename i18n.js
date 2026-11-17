@@ -1,6 +1,6 @@
 /* =====================================================================
    THE ELEVEN SEALS COMMUNITY - i18n.js
-   The same six languages as the game. Game texts (kingdoms, monsters,
+   The same eight languages as the game. Game texts (kingdoms, monsters,
    legends, What's new, lore) use the game's own dictionaries, copied into
    game-data/lang/ by sync.ps1. The page's own words are in lang-page.js.
    Load order: game-data/lang/files.js, this file, lang-page.js; the
@@ -9,6 +9,7 @@
 const LANGS = [
   { id: 'en', name: 'English' }, { id: 'fr', name: 'Français' }, { id: 'es', name: 'Español' },
   { id: 'pt', name: 'Português' }, { id: 'ja', name: '日本語' }, { id: 'zh', name: '中文' },
+  { id: 'ar', name: 'العربية' }, { id: 'ru', name: 'Русский' },
 ];
 const L10N = {};
 const PAGE_L10N = {};
@@ -21,6 +22,7 @@ let LANG = (function () {
   return LANGS.some(l => l.id === id) ? id : 'en';
 })();
 document.documentElement.lang = LANG;
+document.documentElement.dir = LANG === 'ar' ? 'rtl' : 'ltr';   // Arabic reads right to left
 
 // called by the game's lang/*.js files
 function addLang(id, dict) { L10N[id] = Object.assign(L10N[id] || {}, dict); }

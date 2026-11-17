@@ -128,7 +128,7 @@ function pageHome() {
       h('div', { class: 'in' },
         h('img', { class: 'logo', src: 'img/title/logo.png', alt: 'The Eleven Seals' }),
         h('p', null, t('A text adventure across the eleven kingdoms. Pick a people, hunt the monsters of its legends, and break the Seals before the ink swallows the world.')),
-        h('div', { class: 'btns' }, h('a', { class: 'btn main', href: PLAY }, t('Play now')), h('a', { class: 'btn', href: '#/hero' }, t('Share your hero'))))),
+        h('div', { class: 'btns' }, h('a', { class: 'btn main', href: '#/hero' }, t('Share your hero'))))),
     h('section', { class: 'sec' },
       h('h2', null, t('What’s new')),
       h('div', { class: 'card news' },
@@ -181,8 +181,7 @@ function pageKingdoms(args) {
         h('p', { class: 'quote' }, (CJK ? '「' : '“') + tr(K.lines[0]) + (CJK ? '」' : '”')),
         hero && h('div', { class: 'card', style: 'padding:14px 16px;display:flex;gap:14px;align-items:center' },
           h('img', { src: 'img/hero/' + K.id + '.jpg', alt: '', style: 'width:72px;height:72px;border-radius:12px;object-fit:cover' }),
-          h('div', null, h('b', null, tr(hero.name)), h('div', { class: 'note' }, t('Hero of old, who {how}.', { how: tr(hero.how) })))),
-        h('div', { class: 'btns', style: 'margin-top:18px' }, h('a', { class: 'btn main', href: PLAY }, t('Play as {k}', { k: K.name }))))),
+          h('div', null, h('b', null, tr(hero.name)), h('div', { class: 'note' }, t('Hero of old, who {how}.', { how: tr(hero.how) })))))),
     h('section', { class: 'sec', style: 'margin-top:36px' },
       h('h2', null, t('Monsters of {k}', { k: K.name })), monsterGrid(mons)));
 }

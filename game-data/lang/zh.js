@@ -99,6 +99,8 @@ addLang('zh', {
  "Kept on this device": "保存在此设备上",
  "tap to change": "点按更改",
  "Weather on the map": "地图上的天气",
+ "Low graphics": "低画质",
+ "for slower phones: a simpler map, no weather animation": "适合较慢的手机：地图更简洁，没有天气动画",
  "Space between hexes": "格子间距",
  "Text size": "文字大小",
  "Walking speed": "步行速度",

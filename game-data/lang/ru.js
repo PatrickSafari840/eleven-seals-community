@@ -100,6 +100,8 @@ addLang('ru', {
  "Kept on this device": "Хранится на этом устройстве",
  "tap to change": "нажми, чтобы изменить",
  "Weather on the map": "Погода на карте",
+ "Low graphics": "Упрощённая графика",
+ "for slower phones: a simpler map, no weather animation": "для медленных телефонов: проще карта, без анимации погоды",
  "Space between hexes": "Расстояние между гексами",
  "Text size": "Размер текста",
  "Walking speed": "Скорость ходьбы",

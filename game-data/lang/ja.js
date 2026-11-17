@@ -99,6 +99,8 @@ addLang('ja', {
  "Kept on this device": "この端末に保存",
  "tap to change": "タップで変更",
  "Weather on the map": "地図に天気",
+ "Low graphics": "軽量グラフィック",
+ "for slower phones: a simpler map, no weather animation": "動作の遅いスマホ向け：地図をシンプルにし、天気のアニメーションを止めます",
  "Space between hexes": "マスの間隔",
  "Text size": "文字サイズ",
  "Walking speed": "歩く速さ",

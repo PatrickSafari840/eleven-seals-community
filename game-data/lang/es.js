@@ -99,6 +99,8 @@ addLang('es', {
  "Kept on this device": "Guardados en este dispositivo",
  "tap to change": "toca para cambiar",
  "Weather on the map": "Clima en el mapa",
+ "Low graphics": "Gráficos ligeros",
+ "for slower phones: a simpler map, no weather animation": "para móviles más lentos: un mapa más simple, sin animación del clima",
  "Space between hexes": "Espacio entre casillas",
  "Text size": "Tamaño del texto",
  "Walking speed": "Velocidad al caminar",

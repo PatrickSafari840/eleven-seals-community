@@ -99,6 +99,8 @@ addLang('pt', {
  "Kept on this device": "Guardados neste aparelho",
  "tap to change": "toca para mudar",
  "Weather on the map": "Tempo no mapa",
+ "Low graphics": "Gráficos leves",
+ "for slower phones: a simpler map, no weather animation": "para telemóveis mais lentos: um mapa mais simples, sem animação do tempo",
  "Space between hexes": "Espaço entre hexágonos",
  "Text size": "Tamanho do texto",
  "Walking speed": "Velocidade a andar",

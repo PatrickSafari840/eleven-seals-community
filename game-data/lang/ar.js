@@ -100,6 +100,8 @@ addLang('ar', {
  "Kept on this device": "محفوظ على هذا الجهاز",
  "tap to change": "انقر للتغيير",
  "Weather on the map": "الطقس على الخريطة",
+ "Low graphics": "رسوميات خفيفة",
+ "for slower phones: a simpler map, no weather animation": "للهواتف الأبطأ: خريطة أبسط بلا حركة للطقس",
  "Space between hexes": "المسافة بين الخانات",
  "Text size": "حجم النص",
  "Walking speed": "سرعة المشي",

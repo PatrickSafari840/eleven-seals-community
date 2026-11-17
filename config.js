@@ -5,8 +5,8 @@
 const COMMUNITY = {
   // where the "Play" buttons go. Relative works when the game and this page
   // sit side by side; put the full address once the game is online.
-  // Until the game is online or on Google Play, Play opens the Download page.
-  gameUrl: '#/download',
+  // the web game on Cloudflare Pages (Play buttons)
+  gameUrl: 'https://eleven-seals.pages.dev/',
 
   // the Android download (Download page, #/download). The APKs sit on the
   // GitHub release named by `tag`; files are eleven-seals-<version>-en-<lang>.apk.

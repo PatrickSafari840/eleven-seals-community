@@ -487,7 +487,8 @@ addPageLang('ar', {
   "Tap Install, then Open. Your saves stay on your phone.": "اضغط «تثبيت» ثم «فتح». تبقى حفظاتك على هاتفك.",
   "This is an early version. To update it, download the new file and install it over the old one: your saves are kept.": "هذه نسخة مبكرة. لتحديثها، نزّل الملف الجديد وثبّته فوق القديم: تبقى حفظاتك كما هي.",
   "All downloads and older versions": "كل التنزيلات والإصدارات السابقة",
-  "One download per language, before Google Play": "تنزيل لكل لغة، قبل Google Play"
+  "One download per language, before Google Play": "تنزيل لكل لغة، قبل Google Play",
+  "Play in your browser": "العب في متصفحك"
 });
 addPageLang('ru', {
   "Download": "Скачать",
@@ -505,5 +506,6 @@ addPageLang('ru', {
   "Tap Install, then Open. Your saves stay on your phone.": "Нажми «Установить», затем «Открыть». Сохранения остаются на телефоне.",
   "This is an early version. To update it, download the new file and install it over the old one: your saves are kept.": "Это ранняя версия. Чтобы обновить её, скачай новый файл и установи поверх старого: сохранения останутся.",
   "All downloads and older versions": "Все загрузки и прошлые версии",
-  "One download per language, before Google Play": "Отдельная загрузка для каждого языка, ещё до Google Play"
+  "One download per language, before Google Play": "Отдельная загрузка для каждого языка, ещё до Google Play",
+  "Play in your browser": "Играть в браузере"
 });

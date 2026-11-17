@@ -294,7 +294,7 @@ const WHATS_NEW = [
 ];
 // The community page (the 11_seals_community folder next to the game). When both are online,
 // put its full address here, e.g. 'https://your-site.example/community/index.html'. Empty hides its buttons.
-const COMMUNITY_URL = 'https://patricksafari840.github.io/eleven-seals-community/index.html';   // on GitHub Pages (local copy: '../11_seals_community/index.html')
+const COMMUNITY_URL = 'https://eleven-seals-community.pages.dev/index.html';   // on Cloudflare Pages (copy on GitHub Pages: patricksafari840.github.io/eleven-seals-community; local: '../11_seals_community/index.html')
 const COMMUNITY_LINKS = [
   // { name: 'Discord', note: 'Chat with other hunters', url: 'https://discord.gg/...' },
   // { name: 'YouTube', note: 'Trailers and devlogs', url: 'https://youtube.com/@...' },

@@ -128,7 +128,7 @@ function pageHome() {
       h('div', { class: 'in' },
         h('img', { class: 'logo', src: 'img/title/logo.png', alt: 'The Eleven Seals' }),
         h('p', null, t('A text adventure across the eleven kingdoms. Pick a people, hunt the monsters of its legends, and break the Seals before the ink swallows the world.')),
-        h('div', { class: 'btns' }, h('a', { class: 'btn main', href: '#/hero' }, t('Share your hero'))))),
+        h('div', { class: 'btns' }, h('a', { class: 'btn main', href: PLAY }, t('Play now')), h('a', { class: 'btn', href: '#/download' }, t('Download for Android')), h('a', { class: 'btn', href: '#/hero' }, t('Share your hero'))))),
     h('section', { class: 'sec' },
       h('h2', null, t('What’s new')),
       h('div', { class: 'card news' },
@@ -181,7 +181,8 @@ function pageKingdoms(args) {
         h('p', { class: 'quote' }, (CJK ? '「' : '“') + tr(K.lines[0]) + (CJK ? '」' : '”')),
         hero && h('div', { class: 'card', style: 'padding:14px 16px;display:flex;gap:14px;align-items:center' },
           h('img', { src: 'img/hero/' + K.id + '.jpg', alt: '', style: 'width:72px;height:72px;border-radius:12px;object-fit:cover' }),
-          h('div', null, h('b', null, tr(hero.name)), h('div', { class: 'note' }, t('Hero of old, who {how}.', { how: tr(hero.how) })))))),
+          h('div', null, h('b', null, tr(hero.name)), h('div', { class: 'note' }, t('Hero of old, who {how}.', { how: tr(hero.how) })))),
+        h('div', { class: 'btns', style: 'margin-top:18px' }, h('a', { class: 'btn main', href: PLAY }, t('Play as {k}', { k: K.name }))))),
     h('section', { class: 'sec', style: 'margin-top:36px' },
       h('h2', null, t('Monsters of {k}', { k: K.name })), monsterGrid(mons)));
 }
@@ -386,7 +387,7 @@ function pageDownload() {
       h('div', { class: 'in' },
         h('img', { class: 'logo', src: 'img/title/logo.png', alt: 'The Eleven Seals' }),
         h('p', null, A && A.playStoreUrl ? t('The Eleven Seals is on Google Play.') : t('Play The Eleven Seals on your Android phone now, before it reaches Google Play.')),
-        A && A.playStoreUrl && h('div', { class: 'btns' }, h('a', { class: 'btn main', href: A.playStoreUrl, target: '_blank', rel: 'noopener' }, t('Get it on Google Play'))))),
+        h('div', { class: 'btns' }, A && A.playStoreUrl && h('a', { class: 'btn main', href: A.playStoreUrl, target: '_blank', rel: 'noopener' }, t('Get it on Google Play')), h('a', { class: 'btn' + (A && A.playStoreUrl ? '' : ' main'), href: PLAY }, t('Play in your browser'))))),
     !builds.length ? h('p', { class: 'lead' }, t('The download opens soon.')) : h('section', { class: 'sec' },
       h('h2', null, t('Download for Android')),
       h('p', { class: 'lead' }, t('Each download has English and one other language, with the voice narration for both. Pick the language you want to play in.')),
@@ -417,6 +418,7 @@ function pageLinks() {
     h('h2', null, t('Community')),
     h('p', { class: 'lead' }, links.length ? t('Meet other hunters, follow the news and tell us your stories.') : t('Our community channels open soon. Until then, play, share your hero card and send us your bug reports.')),
     h('div', { class: 'links' },
+      h('a', { class: 'card', href: PLAY }, h('b', null, t('Play the game')), h('small', null, t('In your browser, on phone or computer'))),
       h('a', { class: 'card', href: '#/download' }, h('b', null, t('Download for Android')), h('small', null, t('One download per language, before Google Play'))),
       links.map(l => h('a', { class: 'card', href: l.url, target: '_blank', rel: 'noopener' }, h('b', null, tr(l.name)), h('small', null, tr(l.note || l.url))))),
     h('section', { class: 'sec about' },
@@ -428,6 +430,7 @@ function pageLinks() {
 /* ---------- start ---------- */
 function frame() {
   document.title = 'The Eleven Seals · ' + t('Community');
+  $('#playTop').href = PLAY;
   document.querySelectorAll('[data-t]').forEach(el => { el.textContent = t(el.getAttribute('data-t')); });
   $('#footVer').textContent = 'The Eleven Seals · ' + t('Version {v}', { v: GAME_VERSION });
   const pick = $('#langPick');

@@ -430,7 +430,6 @@ function pageLinks() {
 function frame() {
   document.title = 'The Eleven Seals · ' + t('Community');
   document.querySelectorAll('[data-t]').forEach(el => { el.textContent = t(el.getAttribute('data-t')); });
-  $('#playTop').href = PLAY;
   $('#footVer').textContent = 'The Eleven Seals · ' + t('Version {v}', { v: GAME_VERSION });
   const pick = $('#langPick');
   pick.setAttribute('aria-label', t('Language'));

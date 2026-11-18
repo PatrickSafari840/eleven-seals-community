@@ -128,7 +128,8 @@ function pageHome() {
       h('div', { class: 'in' },
         h('img', { class: 'logo', src: 'img/title/logo.png', alt: 'The Eleven Seals' }),
         h('p', null, t('A text adventure across the eleven kingdoms. Pick a people, hunt the monsters of its legends, and break the Seals before the ink swallows the world.')),
-        h('div', { class: 'btns' }, h('a', { class: 'btn main', href: PLAY }, t('Play now')), h('a', { class: 'btn', href: '#/download' }, t('Download for Android')), h('a', { class: 'btn', href: '#/hero' }, t('Share your hero'))))),
+        h('div', { class: 'btns' }, h('a', { class: 'btn main', href: PLAY }, t('Play now')), h('a', { class: 'btn', href: '#/download' }, t('Download for Android')), h('a', { class: 'btn', href: '#/hero' }, t('Share your hero')),
+          supportLink() && h('a', { class: 'btn', href: supportLink(), target: '_blank', rel: 'noopener' }, t('Support the game'))))),
     h('section', { class: 'sec' },
       h('h2', null, t('What’s new')),
       h('div', { class: 'card news' },
@@ -409,6 +410,11 @@ function pageDownload() {
 }
 
 /* ---------- links and about ---------- */
+// the tip page: COMMUNITY.supportUrl, or the game's SUPPORT_URL (data/tales.js); only https counts
+function supportLink() {
+  const u = (COMMUNITY && COMMUNITY.supportUrl) || (typeof SUPPORT_URL !== 'undefined' ? SUPPORT_URL : '');
+  return typeof u === 'string' && /^https:\/\//.test(u) ? u : '';
+}
 function communityLinks() {
   const own = (COMMUNITY && COMMUNITY.links) || [];
   return (own.length ? own : (typeof COMMUNITY_LINKS !== 'undefined' ? COMMUNITY_LINKS : [])).filter(l => l && l.url && /^https?:\/\//.test(l.url));
@@ -421,7 +427,8 @@ function pageLinks() {
     h('div', { class: 'links' },
       h('a', { class: 'card', href: PLAY }, h('b', null, t('Play the game')), h('small', null, t('In your browser, on phone or computer'))),
       h('a', { class: 'card', href: '#/download' }, h('b', null, t('Download for Android')), h('small', null, t('One download per language, before Google Play'))),
-      links.map(l => h('a', { class: 'card', href: l.url, target: '_blank', rel: 'noopener' }, h('b', null, tr(l.name)), h('small', null, tr(l.note || l.url))))),
+      links.map(l => h('a', { class: 'card', href: l.url, target: '_blank', rel: 'noopener' }, h('b', null, tr(l.name)), h('small', null, tr(l.note || l.url)))),
+      supportLink() && h('a', { class: 'card', href: supportLink(), target: '_blank', rel: 'noopener' }, h('b', null, t('Support the game')), h('small', null, t('help keep the game growing')))),
     h('section', { class: 'sec about' },
       h('h2', null, t('About the game')),
       ABOUT_TEXT.map(p => h('p', null, tr(p))),

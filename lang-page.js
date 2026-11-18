@@ -27,6 +27,8 @@ const ROWS = [
     '十一の王国をめぐるテキストアドベンチャー。民をひとつ選び、その伝説の魔物を狩り、墨が世界をのみ込む前に封印を破れ。',
     '一场横跨十一王国的文字冒险。选择一个民族，狩猎其传说中的怪物，在墨吞没世界之前打破封印。'],
   ['Play now', 'Jouer maintenant', 'Jugar ahora', 'Jogar agora', '今すぐプレイ', '立即开始'],
+  ['Support the game', 'Soutenir le jeu', 'Apoyar el juego', 'Apoiar o jogo', 'ゲームを応援する', '支持这款游戏'],
+  ['help keep the game growing', 'aide le jeu à grandir', 'ayuda a que el juego siga creciendo', 'ajuda o jogo a continuar a crescer', 'ゲームの成長を支えよう', '帮助游戏继续成长'],
   ['Share your hero', 'Partage ton héros', 'Comparte tu héroe', 'Partilha o teu herói', '英雄を共有しよう', '分享你的英雄'],
   ['What’s new', 'Nouveautés', 'Novedades', 'Novidades', '新着情報', '新内容'],
   ['Show off your hero', 'Montre ton héros', 'Presume de tu héroe', 'Mostra o teu herói', '英雄を見せびらかそう', '展示你的英雄'],

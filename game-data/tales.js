@@ -310,6 +310,9 @@ const COMMUNITY_LINKS = [
   // { name: 'YouTube', note: 'Trailers and devlogs', url: 'https://youtube.com/@...' },
   // { name: 'Website', note: 'News and updates', url: 'https://...' },
 ];
+// Your tip page (Ko-fi, Patreon...), e.g. 'https://ko-fi.com/yourname'. Shows "Support the game" on the
+// title screen, in About the game and on the community page. Empty hides it.
+const SUPPORT_URL = 'https://patricksafari840.itch.io/eleven-seals';
 const ABOUT_TEXT = [
   'The Eleven Seals is a text adventure on a hand-drawn hex map. Pick one of eleven kingdoms, each with its own people, monsters and legends, and travel a world where the ink of an old empire spilled and brought every people’s fears to life.',
   'Fight in turn-based battles, trade in cities, read the lore stones, break the cracking Seals, and find out what waits in the white heart of the map.',

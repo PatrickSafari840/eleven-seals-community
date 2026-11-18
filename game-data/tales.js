@@ -20,6 +20,8 @@ const BAL = {
   // a beginner's advantage: until the hero reaches level 3, roaming animals, monsters and bandits are weaker
   // (health and damage multiplied) and never more than one level above the hero. Giants and Seal guardians are not.
   beginner: { 1: { hp: .6, dmg: .6 }, 2: { hp: .78, dmg: .78 }, untilLevel: 3 },
+  // fishing: after this many catches the fish grow wary of your hook, for this many days (src/events.js)
+  fishing: { catches: 25, restDays: 4 },
   monsterCap: 35,                // the highest level any enemy can have (src/combat.js makeEnemy), above levelCap
   areaLevel: d => Math.min(35, 1 + Math.floor(d / 4)),   // monster level by distance (in hexes) from where you start (was up to 45)
 };
@@ -282,7 +284,7 @@ const TALES = [
 /* ---------------- Opening menu: about and community ----------------
    Put your links here and they appear under "Community" in the opening menu.
    Example: { name: 'Discord', note: 'Chat with other hunters', url: 'https://discord.gg/xxxx' } */
-const GAME_VERSION = '0.6.4';
+const GAME_VERSION = '0.6.5';
 // shown once after an update (and from "What’s new" on the title screen): src/title.js
 const WHATS_NEW = [
   'Soldiers of every kingdom now have their own paintings, and many buttons have new icons.',

@@ -11,7 +11,8 @@ const BAL = {
   startGold: 25,          // you start with bare hands: enough for one tool (enemies are gentler until level 3: BAL.beginner)
   startFood: 6,
   get foodEvery() { return diff().food; },   // one food is eaten every this many steps (set by the difficulty)
-  hungerDmg: 3,           // health lost per step with no food
+  hungerDmg: 3,           // health lost per hungry turn in the Open Dungeon
+  starve: { every: 4, pct: .1 },   // with no food at all: lose 10% of your health every 4 steps (src/game.js step)
   encounter: { plains: .16, forest: .24, hills: .22, water: .12, road: .06, margin: .35 },
   eventChance: .10,       // chance of a random event on a quiet step
   swimStamina: 18,        // stamina lost per water hex
@@ -284,9 +285,13 @@ const TALES = [
 /* ---------------- Opening menu: about and community ----------------
    Put your links here and they appear under "Community" in the opening menu.
    Example: { name: 'Discord', note: 'Chat with other hunters', url: 'https://discord.gg/xxxx' } */
-const GAME_VERSION = '0.6.6';
+const GAME_VERSION = '0.6.7';
 // shown once after an update (and from "What’s new" on the title screen): src/title.js
 const WHATS_NEW = [
+  '<b>Companions in battle.</b> A fighting beast and a hired sellsword each give you one more move every turn.',
+  '<b>The fox scouts.</b> Once it trusts you, a fox marks danger in red, plants in green and ore in grey on the tiles around you. With it, creatures only attack on the red tiles.',
+  '<b>Heavy bags and hunger.</b> An overloaded bag stops you moving and takes nothing more (drop things from the Bag), and with no food you lose health every 4 steps.',
+  'New paintings for the mining stones, the sellsword and the Beast Friend badge. A new search game for poster scraps, and hunt marks that are easier to see, also on the world map.',
   'Soldiers of every kingdom now have their own paintings, and many buttons have new icons.',
   '<b>People remember you.</b> Innkeepers, shopkeepers, alchemists, smiths and Huntmasters have names and quiet feelings about you: be kind, bring gifts, or be rude, and watch their prices and favours change. Tap “Talk to…” in any shop or inn.',
   '<b>Clue games.</b> Poster scraps are guarded by traps and messes to search, Seal carvings hide rune puzzles, and you can outwit bandit lookouts at checkers.',

@@ -399,6 +399,7 @@ function pageDownload() {
         h('h3', null, t('How to install')),
         h('ol', null,
           h('li', null, t('Tap your language above. The file downloads to your phone.')),
+          h('li', null, t('Wait until the download is complete: the file must have the size shown above. If Android says the package is invalid, the download stopped early: delete the file and download it again, on Wi-Fi.')),
           h('li', null, t('Open the file from your notifications or your Downloads.')),
           h('li', null, t('If Android asks, allow your browser to install unknown apps, then go back.')),
           h('li', null, t('Tap Install, then Open. Your saves stay on your phone.'))),

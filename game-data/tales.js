@@ -284,7 +284,7 @@ const TALES = [
 /* ---------------- Opening menu: about and community ----------------
    Put your links here and they appear under "Community" in the opening menu.
    Example: { name: 'Discord', note: 'Chat with other hunters', url: 'https://discord.gg/xxxx' } */
-const GAME_VERSION = '0.6.5';
+const GAME_VERSION = '0.6.6';
 // shown once after an update (and from "What’s new" on the title screen): src/title.js
 const WHATS_NEW = [
   'Soldiers of every kingdom now have their own paintings, and many buttons have new icons.',

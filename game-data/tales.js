@@ -306,7 +306,7 @@ const WHATS_NEW = [
 // put its full address here, e.g. 'https://your-site.example/community/index.html'. Empty hides its buttons.
 const COMMUNITY_URL = 'https://eleven-seals-community.pages.dev/index.html';   // on Cloudflare Pages (copy on GitHub Pages: patricksafari840.github.io/eleven-seals-community; local: '../11_seals_community/index.html')
 const COMMUNITY_LINKS = [
-  // { name: 'Discord', note: 'Chat with other hunters', url: 'https://discord.gg/...' },
+  { name: 'Discord', note: 'Chat with other hunters', url: 'https://discord.gg/tUsbmrkng' },
   // { name: 'YouTube', note: 'Trailers and devlogs', url: 'https://youtube.com/@...' },
   // { name: 'Website', note: 'News and updates', url: 'https://...' },
 ];

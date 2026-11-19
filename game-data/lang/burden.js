@@ -17,6 +17,7 @@ const ROWS = {
   '+# from your companions': { fr: '+# grâce à tes compagnons', es: '+# por tus compañeros', pt: '+# dos teus companheiros', ja: '仲間のおかげで+#', zh: '同伴带来 +#', ar: '+# من رفاقك', ru: '+# от спутников' },
   'Support the game': { fr: 'Soutenir le jeu', es: 'Apoyar el juego', pt: 'Apoiar o jogo', ja: 'ゲームを応援する', zh: '支持这款游戏', ar: 'ادعم اللعبة', ru: 'Поддержать игру' },
   'help keep the game growing': { fr: 'aide le jeu à grandir', es: 'ayuda a que el juego siga creciendo', pt: 'ajuda o jogo a continuar a crescer', ja: 'ゲームの成長を支えよう', zh: '帮助游戏继续成长', ar: 'ساعد اللعبة على النمو', ru: 'помоги игре расти' },
+  'Chat with other hunters': { fr: 'Discute avec d’autres chasseurs', es: 'Habla con otros cazadores', pt: 'Conversa com outros caçadores', ja: '他の狩人と話そう', zh: '和其他猎人聊天', ar: 'تحدّث مع صيادين آخرين', ru: 'Общайся с другими охотниками' },
   'No room': { fr: 'Plus de place', es: 'No hay sitio', pt: 'Sem espaço', ja: '入らない', zh: '没有空间', ar: 'لا مكان', ru: 'Нет места' },
 };
 for (const l of ['fr', 'es', 'pt', 'ja', 'zh', 'ar', 'ru']) { const d = {}; for (const [en, t] of Object.entries(ROWS)) if (t[l]) d[en] = t[l]; addLang(l, d); }

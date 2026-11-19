@@ -285,9 +285,15 @@ const TALES = [
 /* ---------------- Opening menu: about and community ----------------
    Put your links here and they appear under "Community" in the opening menu.
    Example: { name: 'Discord', note: 'Chat with other hunters', url: 'https://discord.gg/xxxx' } */
-const GAME_VERSION = '0.6.7';
+const GAME_VERSION = '0.6.8';
 // shown once after an update (and from "What’s new" on the title screen): src/title.js
 const WHATS_NEW = [
+  '<b>Scout animals.</b> Every kingdom’s general store sells its own scout animal (95 gold). Press Scout on the bottom bar: it reveals the land around you, marks danger, plants and ore, and points the way to your goal. It rests 1½ minutes between flights.',
+  '<b>Catch any animal.</b> With a capture net, weaken an animal to a quarter of its health and throw the net. Tame it, sell it at a general store, or keep it in the stable of a capital’s inn. The pack donkey is now sold with the bags at the general store.',
+  '<b>Show on map.</b> The world map zooms and drags, and marks your goal with a gold star. The Journal has a “Show on map” button.',
+  '<b>Quests every 7 days.</b> Notice boards keep their quests for 7 days. Finish one, and that board posts new notices 7 days later.',
+  '<b>Groups fight as one.</b> A pack or a band is one tougher enemy with more health. A hired sellsword (3, 7 or 10 days) gives you one more move each turn.',
+  '<b>Teleport further.</b> Each trip now costs 15 to 25 gold, and you can teleport to visited towns of kingdoms allied or at peace with the one you are in.',
   '<b>Companions in battle.</b> A fighting beast and a hired sellsword each give you one more move every turn.',
   '<b>The fox scouts.</b> Once it trusts you, a fox marks danger in red, plants in green and ore in grey on the tiles around you. With it, creatures only attack on the red tiles.',
   '<b>Heavy bags and hunger.</b> An overloaded bag stops you moving and takes nothing more (drop things from the Bag), and with no food you lose health every 4 steps.',

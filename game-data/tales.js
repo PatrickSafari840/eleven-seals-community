@@ -8,7 +8,7 @@
 /* ---------------- Game balance ---------------- */
 const BAL = {
   mapRadius: 70,          // hexes from the centre to the edge of the ocean (three continents, see src/world.js)
-  startGold: 25,          // you start with bare hands: enough for one tool (enemies are gentler until level 3: BAL.beginner)
+  startGold: 25,          // you start with bare hands: enough for one tool (enemies are gentler until level 5: BAL.beginner)
   startFood: 6,
   get foodEvery() { return diff().food; },   // one food is eaten every this many steps (set by the difficulty)
   hungerDmg: 3,           // health lost per hungry turn in the Open Dungeon
@@ -18,9 +18,10 @@ const BAL = {
   swimStamina: 18,        // stamina lost per water hex
   levelCap: 27,                  // the highest level a hero can reach (src/game.js gainXP)
   hpAtCap: 875,                  // a hero's maximum health at the top level, and the most it can ever be (src/game.js maxHp)
-  // a beginner's advantage: until the hero reaches level 3, roaming animals, monsters and bandits are weaker
+  // a beginner's advantage: until the hero reaches level 5, roaming animals, monsters and bandits are weaker
+  // (less and less each level, then normal from level 5)
   // (health and damage multiplied) and never more than one level above the hero. Giants and Seal guardians are not.
-  beginner: { 1: { hp: .6, dmg: .6 }, 2: { hp: .78, dmg: .78 }, untilLevel: 3 },
+  beginner: { 1: { hp: .6, dmg: .6 }, 2: { hp: .7, dmg: .7 }, 3: { hp: .8, dmg: .8 }, 4: { hp: .9, dmg: .9 }, untilLevel: 5 },
   // fishing: after this many catches the fish grow wary of your hook, for this many days (src/events.js)
   fishing: { catches: 25, restDays: 4 },
   monsterCap: 35,                // the highest level any enemy can have (src/combat.js makeEnemy), above levelCap
@@ -285,9 +286,11 @@ const TALES = [
 /* ---------------- Opening menu: about and community ----------------
    Put your links here and they appear under "Community" in the opening menu.
    Example: { name: 'Discord', note: 'Chat with other hunters', url: 'https://discord.gg/xxxx' } */
-const GAME_VERSION = '0.6.8';
+const GAME_VERSION = '0.6.9';
 // shown once after an update (and from "What’s new" on the title screen): src/title.js
 const WHATS_NEW = [
+  '<b>Missed hunts are no longer bosses.</b> A monster you do not find in time grows Enraged: stronger than before, and it still hunts you, but it is not Boss-rank any more.',
+  '<b>An easier start.</b> Roaming animals, monsters and bandits are gentler until level 5 (it was level 3), a little less each level.',
   '<b>Scout animals.</b> Every kingdom’s general store sells its own scout animal (95 gold). Press Scout on the bottom bar: it reveals the land around you, marks danger, plants and ore, and points the way to your goal. It rests 1½ minutes between flights.',
   '<b>Catch any animal.</b> With a capture net, weaken an animal to a quarter of its health and throw the net. Tame it, sell it at a general store, or keep it in the stable of a capital’s inn. The pack donkey is now sold with the bags at the general store.',
   '<b>Show on map.</b> The world map zooms and drags, and marks your goal with a gold star. The Journal has a “Show on map” button.',

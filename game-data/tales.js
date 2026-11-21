@@ -286,9 +286,12 @@ const TALES = [
 /* ---------------- Opening menu: about and community ----------------
    Put your links here and they appear under "Community" in the opening menu.
    Example: { name: 'Discord', note: 'Chat with other hunters', url: 'https://discord.gg/xxxx' } */
-const GAME_VERSION = '0.6.9';
+const GAME_VERSION = '0.7.0';
 // shown once after an update (and from "What’s new" on the title screen): src/title.js
 const WHATS_NEW = [
+  '<b>Play with friends.</b> Menu > Play with friends: start a party and share its code. Up to 11 heroes, each from a different kingdom. Friends show on your map; strike in their fights, heal them, send gold, and share the glory of every Seal the party breaks.',
+  '<b>Stronger healing.</b> A healing draught now heals 40% of your health and a greater healing 70%, even with potion sickness.',
+  '<b>Enraged monsters are weaker.</b> A hunted monster you missed has about a sixth less health and hits a little softer.',
   '<b>Missed hunts are no longer bosses.</b> A monster you do not find in time grows Enraged: stronger than before, and it still hunts you, but it is not Boss-rank any more.',
   '<b>An easier start.</b> Roaming animals, monsters and bandits are gentler until level 5 (it was level 3), a little less each level.',
   '<b>Scout animals.</b> Every kingdom’s general store sells its own scout animal (95 gold). Press Scout on the bottom bar: it reveals the land around you, marks danger, plants and ore, and points the way to your goal. It rests 1½ minutes between flights.',

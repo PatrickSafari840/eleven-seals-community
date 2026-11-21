@@ -200,8 +200,8 @@ const FAUNA = {
 };
 
 const POTIONS = {
-  "heal_s": {"name":"Healing draught","color":"#c8452f","heal":15,"price":12,"desc":"Heals 15 health."},
-  "heal_l": {"name":"Greater healing","color":"#a3392b","heal":50,"price":35,"desc":"Heals 50 health."},
+  "heal_s": {"name":"Healing draught","color":"#c8452f","heal":15,"price":12,"desc":"Heals 40% of your health."},
+  "heal_l": {"name":"Greater healing","color":"#a3392b","heal":50,"price":35,"desc":"Heals 70% of your health."},
   "regen": {"name":"Troll blood","color":"#4f7a3a","regen":20,"price":30,"desc":"Heals 2 health a second for 20 seconds."},
   "swift": {"name":"Swiftness tonic","color":"#e8c870","swift":30,"price":20,"desc":"Move 35% faster for 30 seconds."},
   "might": {"name":"Ogre strength","color":"#e07b3a","might":30,"price":25,"desc":"+4 weapon damage for 30 seconds."},

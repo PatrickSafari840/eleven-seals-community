@@ -286,9 +286,11 @@ const TALES = [
 /* ---------------- Opening menu: about and community ----------------
    Put your links here and they appear under "Community" in the opening menu.
    Example: { name: 'Discord', note: 'Chat with other hunters', url: 'https://discord.gg/xxxx' } */
-const GAME_VERSION = '0.7.0';
+const GAME_VERSION = '0.7.1';
 // shown once after an update (and from "What’s new" on the title screen): src/title.js
 const WHATS_NEW = [
+  '<b>Your blows hit harder.</b> Until you own a legendary weapon and a forged armour, every weapon attack takes at least as big a share of a monster’s health as its blows take of yours (and more). Poster hunts too.',
+  '<b>Rain on low graphics.</b> With Low graphics on, you now see light rain on the map. It is drawn very simply, so the game stays fast.',
   '<b>Play with friends.</b> Menu > Play with friends: start a party and share its code. Up to 11 heroes, each from a different kingdom. Friends show on your map; strike in their fights, heal them, send gold, and share the glory of every Seal the party breaks.',
   '<b>Stronger healing.</b> A healing draught now heals 40% of your health and a greater healing 70%, even with potion sickness.',
   '<b>Enraged monsters are weaker.</b> A hunted monster you missed has about a sixth less health and hits a little softer.',

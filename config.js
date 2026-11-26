@@ -12,8 +12,8 @@ const COMMUNITY = {
   // GitHub release named by `tag`; files are eleven-seals-<version>-en-<lang>.apk.
   // Set playStoreUrl once the game is on Google Play: the page then shows that first.
   android: {
-    version: '0.7.2',
-    tag: 'v0.7.2',
+    version: '0.7.3',
+    tag: 'v0.7.3',
     releaseBase: 'https://github.com/PatrickSafari840/eleven-seals-community/releases/download/',
     releasePage: 'https://github.com/PatrickSafari840/eleven-seals-community/releases/latest',
     // one APK per language pair (English + one), size in MB

@@ -286,9 +286,10 @@ const TALES = [
 /* ---------------- Opening menu: about and community ----------------
    Put your links here and they appear under "Community" in the opening menu.
    Example: { name: 'Discord', note: 'Chat with other hunters', url: 'https://discord.gg/xxxx' } */
-const GAME_VERSION = '0.7.2';
+const GAME_VERSION = '0.7.3';
 // shown once after an update (and from "What’s new" on the title screen): src/title.js
 const WHATS_NEW = [
+  '<b>The Rare Goods Market in the Android app.</b> Buy legendary weapons, special armour, irons, herbs and monster parts with Google Play. Small things now cost less: herbs and bog iron from $0.19.',
   '<b>Ads and gold in the Android app.</b> Watch a short ad for gold and food, and buy gold packs with Google Play.',
   '<b>Giants first.</b> In every kingdom, hunt its giant in its lair before you break its Seal. A Seal stays closed until its land’s giant has fallen.',
   '<b>Bigger, wilder Seals.</b> Every floor of every Seal is now a cave with its own random shape: winding halls, side passages and wide caves. You still move one hex at a time. Zoom the map with + and −, the mouse wheel or two fingers, and drag it.',

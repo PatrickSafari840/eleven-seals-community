@@ -199,13 +199,13 @@ const CHAPTERS = [
     goal: 'Find {master} at the Hunters’ Lodge in {capital}, capital of {kingdom}.',
     intro: 'You wake in a small house at the edge of {village}. The bed is warm, the door is new, and nobody remembers the house being built—or remembers you. On the table lies a hunter’s token and a note in an unknown hand: “Go to {capital}. Find the Huntmaster. Say their names.” Outside, a bell rings once though the village has no bell tower. In the dust beneath the table, eleven tiny crowns have been drawn around a white circle.' },
   { title: 'The First Seal',
-    goal: 'Break {boss}’s Seal in the {seal}, in {kingdom}.',
+    goal: 'Slay the giant of {kingdom} in its lair, then break {boss}’s Seal in the {seal}.',
     intro: '{master} turns your token over. Its back bears eleven marks, one for each crown, and a twelfth mark scratched out. “The Ashen Century did not end with a victory,” the Huntmaster says. “The eleven Sealers bound the Blot beneath their lands, then made a pact never to let one crown rule the whole page. Now the bindings are thinning. {hero} sealed the danger beneath {kingdom}. You must go below, learn what is waking, and return alive.”' },
   { title: 'The Names That Remain',
     goal: 'Read four lore stones in the ruins of the old world.',
     intro: 'When {boss} breaks apart, the ink runs up your arms and writes a city you have never seen across the inside of your eyelids. At its centre stands the Unwriter. The Huntmaster recognizes the name from a forbidden line in the Lodge archive: “It can only erase what no one remembers.” Four old stones still hold the truth of the Ashen Century. Find them. The kings have kept different pieces of that truth, and none will trust a stranger with the whole story.' },
   { title: 'Missions of the Eleven Crowns',
-    goal: 'In every kingdom, accept the ruler’s mission, break its Seal, and return to the castle for its oath. Do this for all eleven crowns.',
+    goal: 'In every kingdom, accept the ruler’s mission, slay its giant, break its Seal, and return to the castle for its oath. Do this for all eleven crowns.',
     intro: 'The four stones reveal why the rulers stopped speaking to one another. The last Quill Emperor tried to write every people into one law and every land into one shape. The eleven Sealers saved the world, but their heirs inherited only fragments of the pact—and centuries of suspicion. The Unwriter feeds on those old divisions. No lone hero can mend them. Travel to all eleven capitals. Hear each ruler’s account, carry out their mission at the local Seal, and return with proof. Each crown must choose to stand beside the others.' },
   { title: 'The Council at the Edge',
     goal: 'Sail to the Grey Pier after earning all eleven oaths, then face Corvin, the Hungry Child.',
@@ -286,9 +286,16 @@ const TALES = [
 /* ---------------- Opening menu: about and community ----------------
    Put your links here and they appear under "Community" in the opening menu.
    Example: { name: 'Discord', note: 'Chat with other hunters', url: 'https://discord.gg/xxxx' } */
-const GAME_VERSION = '0.7.1';
+const GAME_VERSION = '0.7.2';
 // shown once after an update (and from "What’s new" on the title screen): src/title.js
 const WHATS_NEW = [
+  '<b>Ads and gold in the Android app.</b> Watch a short ad for gold and food, and buy gold packs with Google Play.',
+  '<b>Giants first.</b> In every kingdom, hunt its giant in its lair before you break its Seal. A Seal stays closed until its land’s giant has fallen.',
+  '<b>Bigger, wilder Seals.</b> Every floor of every Seal is now a cave with its own random shape: winding halls, side passages and wide caves. You still move one hex at a time. Zoom the map with + and −, the mouse wheel or two fingers, and drag it.',
+  '<b>A net for good.</b> Buy the capture net once, like the fishing rod and the mining pick: it never breaks. When you spot an animal, press Capture it and win a hard board game to catch it.',
+  '<b>Snow on low graphics.</b> With Low graphics on, you now see light snow too.',
+  '<b>More pearls.</b> About 1 catch in 7 now brings up a pearl.',
+  '<b>No more outlaws.</b> The outlaw path is gone: bandits no longer ask you to join them, and old wanted posters are taken down.',
   '<b>Your blows hit harder.</b> Until you own a legendary weapon and a forged armour, every weapon attack takes at least as big a share of a monster’s health as its blows take of yours (and more). Poster hunts too.',
   '<b>Rain on low graphics.</b> With Low graphics on, you now see light rain on the map. It is drawn very simply, so the game stays fast.',
   '<b>Play with friends.</b> Menu > Play with friends: start a party and share its code. Up to 11 heroes, each from a different kingdom. Friends show on your map; strike in their fights, heal them, send gold, and share the glory of every Seal the party breaks.',
